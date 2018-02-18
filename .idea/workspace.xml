@@ -1,50 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ddf865f-b6f2-4ae2-9eba-9ad206e45a63" name="Default" comment="Initial Commit Edition 2">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/ML-DroughtAnalysisNLP.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="9ddf865f-b6f2-4ae2-9eba-9ad206e45a63" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/17-11-17.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/FinalCorpus.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/N_association.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/P_association.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDT_pol_sen_result.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/SDT_slang_and_acronym.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_clean.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_clean_copy.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_clean_final.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_clean_sep.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_clean_stopword.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_domain_tweets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_p1.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_p2.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/auto_p3.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bi_tweet.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bigram_corpus.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bigramresults.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/download.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/install.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/negative.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/negative_tweets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/neutral_tweets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/positive.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/positive_tweets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ptag.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/replacers.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/supportSys.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/synonyms.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tag_tweet.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tri_tweet.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/trigram_corpus.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/trigramresults.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ubTweets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/uni_tweets.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/unigram_corpus.csv" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/unigramresults.csv" />
+      <change beforePath="$PROJECT_DIR$/17-11-17.py" afterPath="$PROJECT_DIR$/17-11-17.py" />
+      <change beforePath="$PROJECT_DIR$/SDT_slang_and_acronym.csv" afterPath="$PROJECT_DIR$/SDT_slang_and_acronym.csv" />
+      <change beforePath="$PROJECT_DIR$/auto_clean.csv" afterPath="$PROJECT_DIR$/auto_clean.csv" />
+      <change beforePath="$PROJECT_DIR$/auto_clean_copy.csv" afterPath="$PROJECT_DIR$/auto_clean_copy.csv" />
+      <change beforePath="$PROJECT_DIR$/auto_clean_final.csv" afterPath="$PROJECT_DIR$/auto_clean_final.csv" />
+      <change beforePath="$PROJECT_DIR$/auto_clean_sep.csv" afterPath="$PROJECT_DIR$/auto_clean_sep.csv" />
+      <change beforePath="$PROJECT_DIR$/auto_clean_stopword.csv" afterPath="$PROJECT_DIR$/auto_clean_stopword.csv" />
+      <change beforePath="$PROJECT_DIR$/auto_domain_tweets.csv" afterPath="$PROJECT_DIR$/auto_domain_tweets.csv" />
+      <change beforePath="$PROJECT_DIR$/auto_p3.csv" afterPath="$PROJECT_DIR$/auto_p3.csv" />
+      <change beforePath="$PROJECT_DIR$/bigram_corpus.csv" afterPath="$PROJECT_DIR$/bigram_corpus.csv" />
+      <change beforePath="$PROJECT_DIR$/bigramresults.csv" afterPath="$PROJECT_DIR$/bigramresults.csv" />
+      <change beforePath="$PROJECT_DIR$/synonyms.csv" afterPath="$PROJECT_DIR$/synonyms.csv" />
+      <change beforePath="$PROJECT_DIR$/tag_tweet.csv" afterPath="$PROJECT_DIR$/tag_tweet.csv" />
+      <change beforePath="$PROJECT_DIR$/tri_tweet.csv" afterPath="$PROJECT_DIR$/tri_tweet.csv" />
+      <change beforePath="$PROJECT_DIR$/trigram_corpus.csv" afterPath="$PROJECT_DIR$/trigram_corpus.csv" />
+      <change beforePath="$PROJECT_DIR$/trigramresults.csv" afterPath="$PROJECT_DIR$/trigramresults.csv" />
+      <change beforePath="$PROJECT_DIR$/unigram_corpus.csv" afterPath="$PROJECT_DIR$/unigram_corpus.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -161,6 +136,14 @@
       <option name="presentableId" value="Default" />
       <updated>1518941104353</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit Edition 2">
+      <created>1518941600428</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518941600428</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
