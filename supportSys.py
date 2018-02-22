@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import math
 
 # Importing all Classified Data
 pdataset = pd.read_csv('positive_tweets.csv', names=['tweet', 'classified'])
@@ -31,18 +30,38 @@ mainset['classified'] = mainset['classified'].map({'Positive':1, 'Negative':0})
 # SUPERVISED LEARNING ALGORITHM
 import SL_NB_Processor as cnp
 machine, X, y = cnp.processor(mainset)
-prediction = cnp.prediction(machine, X, y)
-print("Supervised Learning: Naive Bayes \n Results:")
-print(prediction)
+print("\nSupervised Learning: Naive Bayes \nResults:")
+prediction = cnp.sl_prediction(machine, X, y)
+print"SL: NBC - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
 
 # UN-SUPERVISED LEARNING ALGORITHM
 import USL_NB_Processor as cnp
 machine, X, y = cnp.processor(mainset)
 # No Train Test Split and hence no need of y
 del y
-pred_df = cnp.prediction(machine, X)
+pred_df = cnp.usl_prediction(machine, X)
 print("Un-Supervised Learning: Naive Bayes \n Results:")
+print"USL: NBC - Predictions".center(45,'_'), "\n", prediction, "\n"
 print(pred_df.head())
 pred_df.to_csv('NBpredictions')
 
-# TODO Random Forest / Decision Tree SL & USL
+# RFG
+import SL_RanForGen as rfg_cl
+rfg = rfg_cl
+print("Supervised Learning: RANDOM FOREST GENERATION \n Results:")
+machine, X, y = rfg.read_fit(mainset)
+prediction = rfg_cl.rfg_spv_predict(machine, X, y)
+print"SL: RFG - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
+
+import USL_RanForGen as rfg_c
+rfg = rfg_c
+print("Un-supervised Learning: RANDOM FOREST GENERATION \n Results:")
+machine, X, y = rfg.read_fit(mainset)
+del y  # No training
+prediction = rfg_c.rfg_usp_predict(machine, X)
+print"USL: NBC - Predictions".center(45,'_'), "\n", prediction.head(), "\n"
+
+try:
+    rfg_cl.plot(machine, X, y)  # UNSTABLE PLOTTING
+except Exception as e:
+    print "[rfg_c.plot] Plot Warning:", e, "(to be resolved)"

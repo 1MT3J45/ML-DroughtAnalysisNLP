@@ -7,9 +7,7 @@ import matplotlib.pyplot as plt
 
 def processor(dataset_name):
     # Importing the Dataset
-    #dataset = pd.read_csv("", delimiter='\t', quoting=3)
     dataset = dataset_name
-    # We can have Double Quotes, Commas but Tab is best! also we are ignoring double quotes
 
     # Cleaning the Texts
     import re
@@ -49,7 +47,7 @@ def processor(dataset_name):
     return classifier, X_test, y_test
 
 
-def prediction(classifier, X_input, y_input=0):
+def sl_prediction(classifier, X_input, y_input=0):
     X_test = X_input
     y_test = y_input
     # Predicting the Test set results

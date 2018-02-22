@@ -39,10 +39,6 @@ def processor(dataset_name):
     X = cv.fit_transform(corpus).toarray()
     y = dataset.iloc[:, -1].values
 
-    # Splitting Data into Training & Testing
-    # from sklearn.model_selection import train_test_split
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state = 0)
-
     # Fitting Logistic Regression to the Training set
     from sklearn.naive_bayes import GaussianNB
     classifier = GaussianNB()
@@ -50,12 +46,12 @@ def processor(dataset_name):
     return classifier, X, y
 
 
-def prediction(machine, X_input):
+def usl_prediction(machine, X_input):
     classifier = machine
     X_data = X_input
     # Predicting the Test set results
     y_pred = classifier.predict(X_data)
-    print(y_pred)
+
     X_data = pd.DataFrame(X_data)
     y_pred = pd.DataFrame(y_pred)
     df = pd.concat([X_data, y_pred], axis=1)
