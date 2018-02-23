@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 def read_fit(data_frame):
-    # IMPORTING DATASET
+    # Importing Dataset
     dataset = data_frame
 
     # Cleaning the Texts
@@ -73,8 +73,9 @@ def plot(machine, X_input, y_input):
     # Visualising the Training set results
     from matplotlib.colors import ListedColormap
     X_set, y_set = X_train, y_train
-    X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 1, stop = X_set[:, 0].max() + 1, step = 0.1),
-                         np.arange(start = X_set[:, X_set.T.__len__()].min() - 1, stop = X_set[:, X_set.T.__len__()].max() + 1, step = 0.1))
+    X1, X2 = np.meshgrid(np.arange(start=X_set[:, 0].min() - 1, stop=X_set[:, 0].max() + 1, step=0.1),
+                         np.arange(start=X_set[:, X_set.T.__len__()].min() - 1, stop=X_set[:, X_set.T.__len__()].max()+1
+                                   , step=0.1))
     plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
                  alpha = 0.75, cmap = ListedColormap(('red', 'green')))
     plt.xlim(X1.min(), X1.max())

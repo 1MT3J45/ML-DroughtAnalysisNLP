@@ -22,17 +22,21 @@ def na_remover(df):
 
 pos_df = na_remover(pdataset)
 neg_df = na_remover(ndataset)
+neu_df = na_remover(nudataset)
 
 # Merging Positives and Negatives for Analysis
-mainset = pd.concat([pos_df, neg_df], axis=0, ignore_index=True)
-mainset['classified'] = mainset['classified'].map({'Positive':1, 'Negative':0})
+mainset = pd.concat([pos_df, neg_df, neu_df], axis=0, ignore_index=True)
+mainset['classified'] = mainset['classified'].map({'Positive':1, 'Negative':0, 'Neutral':-1})
 
 # SUPERVISED LEARNING ALGORITHM
 import SL_NB_Processor as cnp
+import plotter as pltr
 machine, X, y = cnp.processor(mainset)
 print("\nSupervised Learning: Naive Bayes \nResults:")
 prediction = cnp.sl_prediction(machine, X, y)
 print"SL: NBC - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
+op = mainset['classified'].value_counts()
+pltr.bars(prediction)
 
 # UN-SUPERVISED LEARNING ALGORITHM
 import USL_NB_Processor as cnp
@@ -52,6 +56,7 @@ print("Supervised Learning: RANDOM FOREST GENERATION \n Results:")
 machine, X, y = rfg.read_fit(mainset)
 prediction = rfg_cl.rfg_spv_predict(machine, X, y)
 print"SL: RFG - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
+pltr.bars(prediction)
 
 import USL_RanForGen as rfg_c
 rfg = rfg_c

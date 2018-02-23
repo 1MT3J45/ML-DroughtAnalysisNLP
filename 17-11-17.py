@@ -1324,8 +1324,8 @@ class TweetimentFrame(tk.Frame):
 #   *******************************************
 #Find most commond words from all the tweets
 #
-    def mostCommonWords():
-	# most common words
+    def mostCommonWords(self):
+        # most common words
         rawFile = open("auto_domain_tweets.csv")
         proDat = rawFile.read()
         count = Counter(proDat.split(' '))
