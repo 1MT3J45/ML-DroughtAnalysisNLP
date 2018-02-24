@@ -35,8 +35,7 @@ machine, X, y = cnp.processor(mainset)
 print("\nSupervised Learning: Naive Bayes \nResults:")
 prediction = cnp.sl_prediction(machine, X, y)
 print"SL: NBC - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
-op = mainset['classified'].value_counts()
-pltr.bars(prediction)
+pltr.bars(prediction, plt_name="SL - Naive Bayes Classifier")
 
 # UN-SUPERVISED LEARNING ALGORITHM
 import USL_NB_Processor as cnp
@@ -48,6 +47,9 @@ print("Un-Supervised Learning: Naive Bayes \n Results:")
 print"USL: NBC - Predictions".center(45,'_'), "\n", prediction, "\n"
 print(pred_df.head())
 pred_df.to_csv('NBpredictions')
+gt = mainset['classified'].value_counts()
+pr = pred_df.iloc[:, -1].value_counts()
+pltr.biplt(gt, pr, "UnSupervised Naive Bayes")
 
 # RFG
 import SL_RanForGen as rfg_cl
@@ -56,15 +58,17 @@ print("Supervised Learning: RANDOM FOREST GENERATION \n Results:")
 machine, X, y = rfg.read_fit(mainset)
 prediction = rfg_cl.rfg_spv_predict(machine, X, y)
 print"SL: RFG - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
-pltr.bars(prediction)
+pltr.bars(prediction, plt_name="Random Forest Classifier")
 
 import USL_RanForGen as rfg_c
 rfg = rfg_c
 print("Un-supervised Learning: RANDOM FOREST GENERATION \n Results:")
 machine, X, y = rfg.read_fit(mainset)
 del y  # No training
-prediction = rfg_c.rfg_usp_predict(machine, X)
-print"USL: NBC - Predictions".center(45,'_'), "\n", prediction.head(), "\n"
+pred_df_rf = rfg_c.rfg_usp_predict(machine, X)
+print"USL: NBC - Predictions".center(45,'_'), "\n", pred_df_rf.head(), "\n"
+pr = pred_df_rf.iloc[:, -1].value_counts()
+pltr.biplt(gt, pr, "UnSupervised Random Forest Gen.")
 
 try:
     rfg_cl.plot(machine, X, y)  # UNSTABLE PLOTTING

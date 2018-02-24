@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ddf865f-b6f2-4ae2-9eba-9ad206e45a63" name="Default" comment="Random Forest Generation Live">
-      <change beforePath="" afterPath="$PROJECT_DIR$/plotter.py" />
+    <list default="true" id="9ddf865f-b6f2-4ae2-9eba-9ad206e45a63" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/17-11-17.py" afterPath="$PROJECT_DIR$/17-11-17.py" />
       <change beforePath="$PROJECT_DIR$/SDT_slang_and_acronym.csv" afterPath="$PROJECT_DIR$/SDT_slang_and_acronym.csv" />
-      <change beforePath="$PROJECT_DIR$/USL_RanForGen.py" afterPath="$PROJECT_DIR$/USL_RanForGen.py" />
+      <change beforePath="$PROJECT_DIR$/SL_RanForGen.py" afterPath="$PROJECT_DIR$/SL_RanForGen.py" />
       <change beforePath="$PROJECT_DIR$/auto_clean.csv" afterPath="$PROJECT_DIR$/auto_clean.csv" />
       <change beforePath="$PROJECT_DIR$/auto_clean_copy.csv" afterPath="$PROJECT_DIR$/auto_clean_copy.csv" />
       <change beforePath="$PROJECT_DIR$/auto_clean_final.csv" afterPath="$PROJECT_DIR$/auto_clean_final.csv" />
@@ -16,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/auto_p3.csv" afterPath="$PROJECT_DIR$/auto_p3.csv" />
       <change beforePath="$PROJECT_DIR$/bigram_corpus.csv" afterPath="$PROJECT_DIR$/bigram_corpus.csv" />
       <change beforePath="$PROJECT_DIR$/bigramresults.csv" afterPath="$PROJECT_DIR$/bigramresults.csv" />
+      <change beforePath="$PROJECT_DIR$/plotter.py" afterPath="$PROJECT_DIR$/plotter.py" />
       <change beforePath="$PROJECT_DIR$/supportSys.py" afterPath="$PROJECT_DIR$/supportSys.py" />
       <change beforePath="$PROJECT_DIR$/synonyms.csv" afterPath="$PROJECT_DIR$/synonyms.csv" />
       <change beforePath="$PROJECT_DIR$/tag_tweet.csv" afterPath="$PROJECT_DIR$/tag_tweet.csv" />
@@ -33,23 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="17-11-17.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/17-11-17.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="687" column="33" lean-forward="false" selection-start-line="687" selection-start-column="33" selection-end-line="687" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="supportSys.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/supportSys.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="62" column="63" lean-forward="false" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+            <state relative-caret-position="122">
+              <caret line="67" column="46" lean-forward="true" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -60,8 +48,8 @@
       <file leaf-file-name="USL_RanForGen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/USL_RanForGen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="88" column="16" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="88" selection-end-column="16" />
+            <state relative-caret-position="18">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
               <folding>
                 <element signature="e#19#37#0" expanded="true" />
               </folding>
@@ -72,8 +60,8 @@
       <file leaf-file-name="plotter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/plotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state relative-caret-position="266">
+              <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -84,8 +72,8 @@
       <file leaf-file-name="SL_RanForGen.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SL_RanForGen.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+            <state relative-caret-position="144">
+              <caret line="80" column="15" lean-forward="false" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
               <folding>
                 <element signature="e#19#37#0" expanded="true" />
               </folding>
@@ -96,7 +84,7 @@
       <file leaf-file-name="SL_NB_Processor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SL_NB_Processor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-635">
+            <state relative-caret-position="144">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#51#69#0" expanded="true" />
@@ -108,7 +96,7 @@
       <file leaf-file-name="USL_NB_Processor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/USL_NB_Processor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
+            <state relative-caret-position="828">
               <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
               <folding>
                 <element signature="e#51#69#0" expanded="true" />
@@ -151,11 +139,11 @@
         <option value="$PROJECT_DIR$/SL_USL_RanForGen.py" />
         <option value="$PROJECT_DIR$/SL_NB_Processor.py" />
         <option value="$PROJECT_DIR$/USL_NB_Processor.py" />
-        <option value="$PROJECT_DIR$/SL_RanForGen.py" />
         <option value="$PROJECT_DIR$/17-11-17.py" />
         <option value="$PROJECT_DIR$/USL_RanForGen.py" />
-        <option value="$PROJECT_DIR$/plotter.py" />
+        <option value="$PROJECT_DIR$/SL_RanForGen.py" />
         <option value="$PROJECT_DIR$/supportSys.py" />
+        <option value="$PROJECT_DIR$/plotter.py" />
       </list>
     </option>
   </component>
@@ -198,8 +186,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -386,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1519276307115</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Graph Plotting">
+      <created>1519392559487</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519392559487</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -396,13 +391,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40454546" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33125973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33281493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47727272" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24944155" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -465,10 +460,13 @@
     <MESSAGE value="SL &amp; USL Live" />
     <MESSAGE value="Minor Line Additions" />
     <MESSAGE value="Random Forest Generation Live" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random Forest Generation Live" />
+    <MESSAGE value="Graph Plotting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graph Plotting" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -582,18 +580,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NBpredictions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2268">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/sklearn/feature_extraction/text.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
           <caret line="691" column="48" lean-forward="false" selection-start-line="691" selection-start-column="39" selection-end-line="691" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -601,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-39958">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -609,13 +598,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/17-11-17.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="11376">
           <caret line="687" column="33" lean-forward="false" selection-start-line="687" selection-start-column="33" selection-end-line="687" selection-end-column="33" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -625,7 +613,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SL_NB_Processor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-635">
+        <state relative-caret-position="144">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#51#69#0" expanded="true" />
@@ -635,7 +623,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/USL_NB_Processor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
+        <state relative-caret-position="828">
           <caret line="48" column="32" lean-forward="false" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
           <folding>
             <element signature="e#51#69#0" expanded="true" />
@@ -645,8 +633,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SL_RanForGen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="62" column="13" lean-forward="false" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="144">
+          <caret line="80" column="15" lean-forward="false" selection-start-line="80" selection-start-column="15" selection-end-line="80" selection-end-column="15" />
           <folding>
             <element signature="e#19#37#0" expanded="true" />
           </folding>
@@ -655,18 +643,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/USL_RanForGen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="88" column="16" lean-forward="true" selection-start-line="85" selection-start-column="4" selection-end-line="88" selection-end-column="16" />
+        <state relative-caret-position="18">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
           <folding>
             <element signature="e#19#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/NBpredictions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3791">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="266">
+          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -675,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/supportSys.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="62" column="63" lean-forward="false" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+        <state relative-caret-position="122">
+          <caret line="67" column="46" lean-forward="true" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
