@@ -56,35 +56,3 @@ def rfg_usp_predict(machine, X_input):
     df = pd.concat([X_data, y_pred], axis=1)
 
     return df
-
-def plot(machine, X_input, y_input):
-    classifier = machine
-    X_train = X_input
-    y_train = y_input
-
-    # Feature Scaling
-    from sklearn.preprocessing import StandardScaler
-    sc_X = StandardScaler()
-    X_train = sc_X.fit_transform(X_train)
-    print(X_train.T.__len__())
-    print(X_train.view())
-    #X_test = sc_X.transform(X_test)
-
-    # Visualising the Training set results
-    from matplotlib.colors import ListedColormap
-    X_set, y_set = X_train, y_train
-    X1, X2 = np.meshgrid(np.arange(start=X_set[:, 0].min() - 1, stop=X_set[:, 0].max() + 1, step=0.1),
-                         np.arange(start=X_set[:, X_set.T.__len__()].min() - 1, stop=X_set[:, X_set.T.__len__()].max()+1
-                                   , step=0.1))
-    plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
-                 alpha = 0.75, cmap = ListedColormap(('red', 'green')))
-    plt.xlim(X1.min(), X1.max())
-    plt.ylim(X2.min(), X2.max())
-    for i, j in enumerate(np.unique(y_set)):
-        plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, X_set.T.__len__()],
-                    c = ListedColormap(('red', 'green'))(i), label = j)
-    plt.title('Random forest classification (Train set)')
-    plt.xlabel('Parameters')
-    plt.ylabel('Score')
-    plt.legend()
-    plt.show()

@@ -1366,16 +1366,21 @@ class TweetimentFrame(tk.Frame):
             label.config(bg='blue', fg='white')  
             label.config(font=labelfont)
             label.grid(row = r, column = c)
+        import pickle
+        pop_tags = list()
         for line, count in counts.most_common():
             if count>=8 :
                 r+=1
                 #print (line, count)
-                
+                pop_tags.append(line)
                 label = tkinter.Label(window, width =20 , height = 2,text = line, relief=tkinter.RIDGE)
                 label.config(bg='black', fg='white')  
                 label.config(font=labelfont)        
                 label.grid(row = r, column = c)
                 ptags.write(line+"\n")
+        print(pop_tags)
+        f = open('pop_tags', 'w')
+        pickle.dump(pop_tags, file=f)
 
         ptags.close()
 
