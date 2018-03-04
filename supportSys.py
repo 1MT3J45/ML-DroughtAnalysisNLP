@@ -72,7 +72,7 @@ print"USL: NBC - Predictions".center(45,'_'), "\n", pred_df_rf.head(), "\n"
 pr = pred_df_rf.iloc[:, -1].value_counts()
 pltr.biplt(gt, pr, "UnSupervised Random Forest Gen.")
 
-# ----------------------------- FUZZY KITCHEN ----------------------------------------
+# ----------------------------- FUZZY KITCHEN -----------------------------
 import nltk
 nltk.download('averaged_perceptron_tagger')
 all_tweets = " "

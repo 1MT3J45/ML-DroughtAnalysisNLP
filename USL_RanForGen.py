@@ -13,7 +13,6 @@ def read_fit(data_frame):
     nltk.download('stopwords')
     from nltk.corpus import stopwords
     from nltk.stem.porter import PorterStemmer
-
     # Creating a Corpus
     corpus = []
     for i in range(0, dataset.__len__()):
