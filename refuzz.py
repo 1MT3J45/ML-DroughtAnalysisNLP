@@ -299,9 +299,9 @@ try:
 
         one_sentence = tweets.iloc[i]
         scores = sia.polarity_scores(text=one_sentence)
-        print "POS:", scores.get('pos')
-        print "NEG:", scores.get('neg')
-        print "NEU:", scores.get('neu')
+        # print "POS:", scores.get('pos')
+        # print "NEG:", scores.get('neg')
+        # print "NEU:", scores.get('neu')
 
         POS = scores.get('pos')
         NEG = scores.get('neg')
@@ -312,7 +312,7 @@ try:
             RES = 'Positive'
         elif NEG > POS:
             RES = 'Negative'
-        elif NEU >= 0.5:
+        elif NEU >= 0.5 or POS > NEU:
             RES = 'Positive'
         elif NEU < 0.5:
             RES = 'Negative'
@@ -368,7 +368,7 @@ try:
                     if w in F:
                         print("Matched with F")
                         if RES is "Positive":
-                            RES = "Postive"
+                            RES = "Positive"
                         elif RES is "Negative":
                             RES = "Negative"
                     else:
@@ -384,5 +384,5 @@ try:
     fuzzy_df.to_csv("ReFuzzy.csv", index=False)
 
 except Exception as e:
-    print "[Refuzz]:",e
+    print "[Refuzz]:", e
     PrintException()
