@@ -34,7 +34,7 @@ except KeyError as e:
     print("Check parameters / headers of CSV file:%s" % e)
     exit(0)
 
-# SUPERVISED LEARNING ALGORITHM
+
 import SL_NB_Processor as cnp
 import plotter as pltr
 try:
@@ -211,7 +211,24 @@ try:
         # -------------------------------------------------------- MAKING ENTRY OF RECORDS OF TWEETS and POLARITY RESULT
         fuzzy_df = fuzzy_df.append({'tweets': tweets[i], 'classified': RES}, ignore_index=True)       # ADDING RECORDS IN DATAFRAME
 
-    fuzzy_df.to_csv("GlobalWarming/ReFuzzy.csv", index=False)
+    fuzzy_df.to_csv("GlobalWarming/ReFuzzy.csv", index=False, encoding='utf-8-sig')
+
+
+    PS = (fuzzy_df['classified'] == 'Positive').sum()
+    H_PS = (fuzzy_df['classified'] == 'Highly Positive').sum()
+    M_PS = (fuzzy_df['classified'] == 'Moderately Positive').sum()
+    NG = (fuzzy_df['classified'] == 'Negative').sum()
+    H_NG = (fuzzy_df['classified'] == 'Highly Negative').sum()
+    M_NG = (fuzzy_df['classified'] == 'Moderately Negative').sum()
+    text = "Fuzzy Logic Stats"
+    pltr.stackplotter(H_NG, M_NG, NG, H_PS, M_PS, PS, text)
+
+    import os
+
+    try:
+        os.system("libreoffice --calc ReFuzzy.csv")
+    except:
+        print("This Feature works with Debian Based OS with Libre Office only")
 
 except Exception as e:
     print "[Refuzz]:", e

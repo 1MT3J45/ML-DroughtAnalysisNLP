@@ -383,6 +383,23 @@ try:
 
     fuzzy_df.to_csv("ReFuzzy.csv", index=False)
 
+    PS = (fuzzy_df['classified'] == 'Positive').sum()
+    H_PS = (fuzzy_df['classified'] == 'Highly Positive').sum()
+    M_PS = (fuzzy_df['classified'] == 'Moderately Positive').sum()
+    NG = (fuzzy_df['classified'] == 'Negative').sum()
+    H_NG = (fuzzy_df['classified'] == 'Highly Negative').sum()
+    M_NG = (fuzzy_df['classified'] == 'Moderately Negative').sum()
+    text = "Fuzzy Logic Stats"
+    pltr.stackplotter(H_NG, M_NG, NG, H_PS, M_PS, PS, text)
+
+    import os
+
+    try:
+        os.system("libreoffice --calc ReFuzzy.csv")
+    except:
+        print("This Feature works with Debian Based OS with Libre Office only \n TIP: Use a Spreadsheet software to open"
+              "the CSV file.")
+
 except Exception as e:
     print "[Refuzz]:", e
     PrintException()

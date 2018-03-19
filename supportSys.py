@@ -87,9 +87,9 @@ for i in range(mainset.__len__()):
 
 # freqD is Frequency of the Words used in Tweets
 freqD = nltk.FreqDist(nltk.word_tokenize(all_tweets))
-for k, v in freqD.items(): # Finding most Freq. words
-    if v > 25:
-        print k
+# for k, v in freqD.items(): # Finding most Freq. words
+#     if v > 25:
+#         print k
 # OPTIONAL F IN CASE OF GARBAGE OCCURRED IN EXISTING
 
 # D is Synonyms
@@ -102,16 +102,12 @@ F = pickle.load(ser_obj)
 
 # -------------------------------------------------------- COMMIT STEP 1
 nltk.download('vader_lexicon')
-# from nltk.sentiment.vader import SentimentIntensityAnalyzer
-# sia = SentimentIntensityAnalyzer()
-# for twe in nltk.word_tokenize(all_tweets):
-#     scores = sia.polarity_scores(text=twe)
-#     print twe
-#     print "POS:", scores.get('pos')
-#     print "NEG:", scores.get('neg')
-#     print "NEU:", scores.get('neu')
+
 # -------------------------------------------------------- COMMIT STEP 2 (For every word in one tweet)
-fuzzy_df = pd.DataFrame(columns=['tweets', 'classified'])
+fuzzy_df = pd.DataFrame(columns=['Tweets', 'Classified', 'FreqWord'])
+
+######################## TEST CASE 1 #############################
+FW = ''
 for i in range(len(tweets)):
     sent = nltk.word_tokenize(tweets[i])
     PoS_TAGS = nltk.pos_tag(sent)
@@ -134,7 +130,7 @@ for i in range(len(tweets)):
         RES = 'Positive'
     elif NEG > POS:
         RES = 'Negative'
-    elif NEU >= 0.5:
+    elif NEU >= 0.5 or POS > NEU:
         RES = 'Positive'
     elif NEU < 0.5:
         RES = 'Negative'
@@ -146,16 +142,23 @@ for i in range(len(tweets)):
             tri_pairs.append((w1, w2, w3))
             if tri_pairs[0] or tri_pairs[1] or tri_pairs[2] in D:
                 print("[True]: Tri Pairs are found in Drought Rel. Term")
-                if tri_pairs[0] or tri_pairs[1] or tri_pairs[2] in F:
-                    print("[True]: Tri Pairs are found in Frequent Wordset")
-                    if RES is "Positive":
-                        RES = "Highly Positive"
-                    elif RES is "Negative":
-                        RES = "Highly Negative"
-                else:
-                    print"[False]: Doesn't Match with Frequent Wordset\n"
+                # TRIGGER AREA
+                for j in range(len(F)):
+                    if tri_pairs[0] or tri_pairs[1] or tri_pairs[2] in F[j]:
+                        print("[True]: Tri Pairs are found in Frequent Wordset")
+                        if RES is "Positive":
+                            RES = "Highly Positive"
+                            FW = F[j]
+                            #fuzzy_df['FreqWord'].map(lambda x: next((y for y in x.split() if y in F), 'Not Found'))
+                        elif RES is "Negative":
+                            RES = "Highly Negative"
+                            FW = F[j]
+                    else:
+                        print"[False]: Doesn't Match with Frequent Wordset\n"
+
             else:
                 print"[False]: Tri Pairs Matched Nowhere in D\n"
+
         else:
             print "[TriPair(F)]: Pattern for Adverb, Adverb, Adjective did not match.\n Looking for Bi-Pair Patterns\n"
     print(tri_pairs)
@@ -165,18 +168,25 @@ for i in range(len(tweets)):
     for (w1, tag1), (w2, tag2) in nltk.bigrams(PoS_TAGS):
         if tag1.startswith("RB") and tag2.startswith("JJ"):
             bi_pairs.append((w1, w2))
+
             if bi_pairs[0] or bi_pairs[1] in D:
                 print("[True]: Bi Pairs are found in Drought Rel. Term")
-                if bi_pairs[0] or bi_pairs[1] in F:
-                    print("[True]: Bi Pairs are found in Frequent Wordset")
-                    if RES is "Positive":
-                        RES = "Moderately Positive"
-                    elif RES is "Negative":
-                        RES = "Moderately Negative"
-                else:
-                    print("[False]: Bi Pairs found missing in Freq. Wordset")
+
+                for k in range(len(F)):
+                    if bi_pairs[0] or bi_pairs[1] is F[k]:
+                        print("[True]: Bi Pairs are found in Frequent Wordset")
+                        if RES is "Positive":
+                            RES = "Moderately Positive"
+                            FW = F[k]
+                        elif RES is "Negative":
+                            RES = "Moderately Negative"
+                            FW = F[k]
+                    else:
+                        print("[False]: Bi Pairs found missing in Freq. Wordset")
+
             else:
                 print("[False]: Bi Pairs Matched Nowhere in D")
+
         else:
             print("[BiPair(F)]: Pattern Not Matched, Looking for Mono Pattern")
     print(bi_pairs)
@@ -187,51 +197,40 @@ for i in range(len(tweets)):
         if tag.startswith("JJ"):
             if w in D:
                 print("Matched with D")
-                if w in F:
-                    print("Matched with F")
-                    if RES is "Positive":
-                        RES = "Postive"
-                    elif RES is "Negative":
-                        RES = "Negative"
-                else:
-                    print("Couldn't Match with F")
+                for l in range(len(F)):
+                    if w is F[l]:
+                        print("Matched with F")
+                        if RES is "Positive":
+                            RES = "Positive"
+                            FW = F[l]
+                        elif RES is "Negative":
+                            RES = "Negative"
+                            FW = F[l]
+                    else:
+                        print("Unmatched in F")
+                        FW = F[l] in sent
             else:
-                print("the")
+                print("Unmatched in D")
         else:
             print w, "is not an ADJECTIVE"
 
-    # -------------------------------------------------------- COMMIT STEP 5 / 6
 
-    # for i in range(len(PoS_TAGS)):
-    #     # print(POS_TAGS[i])
-    #     tup = PoS_TAGS[i]
-    #     word = tup[0]
-    #     typ = tup[1]
-    #     print(word, " > ", nltk.FreqDist(tup))
-
-    # -------------------------------------------------------- MAKING ENTRY OF RECORDS OF TWEETS and POLARITY RESULT
-    fuzzy_df = fuzzy_df.append({'tweets': tweets[i], 'classified': RES}, ignore_index=True)       # ADDING RECORDS IN DATAFRAME
-
+# -------------------------------------------------------- MAKING ENTRY OF RECORDS OF TWEETS and POLARITY RESULT
+    fuzzy_df = fuzzy_df.append({'Tweets': tweets[i], 'Classified': RES, 'FreqWord': FW}, ignore_index=True)
+# ADDING RECORDS IN DATAFRAME
 fuzzy_df.to_csv("fuzzy.csv", index=False)
-# nltk.download('wordnet')
-# try:
-#     from nltk.corpus import wordnet
-#     syns = wordnet.synsets(PoS_TAGS)
-#     for s in syns:
-#         for l in s.lemmas():
-#             print l.name , " " + str(l.count())
-# except Exception as e:
-#     print(e)
-# nltk.download('sentiwordnet')
-# from nltk.corpus import sentiwordnet as swn
-# swn.senti_synsets('happy', 'a')[0].pos_score()
-# swn.senti_synsets('happy', 'a')[0].neg_score()
-# swn.senti_synsets('happy', 'a')[0].obj_score()
-PS = (fuzzy_df['classified']=='Positive').sum()
-H_PS = (fuzzy_df['classified']=='Highly Positive').sum()
-M_PS = (fuzzy_df['classified']=='Moderately Positive').sum()
-NG = (fuzzy_df['classified']=='Negative').sum()
-H_NG = (fuzzy_df['classified']=='Highly Negative').sum()
-M_NG = (fuzzy_df['classified']=='Moderately Negative').sum()
+
+import os
+try:
+    os.system("libreoffice --calc fuzzy.csv")
+except:
+    print("This Feature works with Debian Based OS with Libre Office only \n TIP: Use a Spreadsheet software to open"
+          "the CSV file.")
+PS = (fuzzy_df['Classified']=='Positive').sum()
+H_PS = (fuzzy_df['Classified']=='Highly Positive').sum()
+M_PS = (fuzzy_df['Classified']=='Moderately Positive').sum()
+NG = (fuzzy_df['Classified']=='Negative').sum()
+H_NG = (fuzzy_df['Classified']=='Highly Negative').sum()
+M_NG = (fuzzy_df['Classified']=='Moderately Negative').sum()
 text = "Fuzzy Logic Stats"
 pltr.stackplotter(H_NG, M_NG, NG, H_PS, M_PS, PS, text)
