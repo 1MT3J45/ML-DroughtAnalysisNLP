@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 
 # Importing all Classified Data
-pdataset = pd.read_csv('positive_tweets.csv', names=['tweet', 'classified'])
-ndataset = pd.read_csv('negative_tweets.csv', names=['tweet', 'classified'])
+pdataset = pd.read_csv('Drought/positive_tweets.csv', names=['tweet', 'classified'])
+ndataset = pd.read_csv('Drought/negative_tweets.csv', names=['tweet', 'classified'])
 nudataset = pd.read_csv('neutral_tweets.csv', names=['tweet', 'classified'])
 
 # Class for Cleaning unusual New Lines and NaN values
@@ -97,9 +97,10 @@ D = pd.read_csv('synonyms.csv')
 D = list(D.iloc[0:,0])
 
 # F is Popular tags
-ser_obj = open('pop_tags', 'r')
-F = pickle.load(ser_obj)
-
+# ser_obj = open('pop_tags', 'r')
+# F = pickle.load(ser_obj)
+F = pd.read_csv('ptag.csv')
+F = list(F.iloc[:,0])
 # -------------------------------------------------------- COMMIT STEP 1
 nltk.download('vader_lexicon')
 
