@@ -1,11 +1,14 @@
 import pandas as pd
 import numpy as np
 import pickle
+import subprocess
+import freqWordSelection as fws
 
 # Importing all Classified Data
 pdataset = pd.read_csv('Drought/positive_tweets.csv', names=['tweet', 'classified'])
 ndataset = pd.read_csv('Drought/negative_tweets.csv', names=['tweet', 'classified'])
 nudataset = pd.read_csv('neutral_tweets.csv', names=['tweet', 'classified'])
+
 
 # Class for Cleaning unusual New Lines and NaN values
 def na_remover(df):
@@ -21,32 +24,35 @@ def na_remover(df):
     print("Dataframe is now NaN free!")
     return df
 
+
 pos_df = na_remover(pdataset)
 neg_df = na_remover(ndataset)
 neu_df = na_remover(nudataset)
 
 # Merging Positives and Negatives for Analysis
 mainset = pd.concat([pos_df, neg_df, neu_df], axis=0, ignore_index=True)
-mainset['classified'] = mainset['classified'].map({'Positive':1, 'Negative':0, 'Neutral':-1})
-mainset = mainset.dropna().reset_index(drop=True)   # RESOLVER #01
+mainset['classified'] = mainset['classified'].map({'Positive': 1, 'Negative': 0, 'Neutral': -1})
+mainset = mainset.dropna().reset_index(drop=True)  # RESOLVER #01
 
 # SUPERVISED LEARNING ALGORITHM
 import SL_NB_Processor as cnp
 import plotter as pltr
+
 machine, X, y = cnp.processor(mainset)
 print("\nSupervised Learning: Naive Bayes \nResults:")
 prediction = cnp.sl_prediction(machine, X, y)
-print"SL: NBC - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
+print"SL: NBC - Conf. Matrix".center(45, '_'), "\n", prediction, "\n"
 pltr.bars(prediction, plt_name="SL - Naive Bayes Classifier")
 
 # UN-SUPERVISED LEARNING ALGORITHM
 import USL_NB_Processor as cnp
+
 machine, X, y = cnp.processor(mainset)
 # No Train Test Split and hence no need of y
 del y
 pred_df = cnp.usl_prediction(machine, X)
 print("Un-Supervised Learning: Naive Bayes \n Results:")
-print"USL: NBC - Predictions".center(45,'_'), "\n", prediction, "\n"
+print"USL: NBC - Predictions".center(45, '_'), "\n", prediction, "\n"
 print(pred_df.head())
 pred_df.to_csv('NBpredictions')
 gt = mainset['classified'].value_counts()
@@ -55,25 +61,28 @@ pltr.biplt(gt, pr, "UnSupervised Naive Bayes")
 
 # RFG
 import SL_RanForGen as rfg_cl
+
 rfg = rfg_cl
 print("Supervised Learning: RANDOM FOREST GENERATION \n Results:")
 machine, X, y = rfg.read_fit(mainset)
 prediction = rfg_cl.rfg_spv_predict(machine, X, y)
-print"SL: RFG - Conf. Matrix".center(45,'_'), "\n", prediction, "\n"
+print"SL: RFG - Conf. Matrix".center(45, '_'), "\n", prediction, "\n"
 pltr.bars(prediction, plt_name="Random Forest Classifier")
 
 import USL_RanForGen as rfg_c
+
 rfg = rfg_c
 print("Un-supervised Learning: RANDOM FOREST GENERATION \n Results:")
 machine, X, y = rfg.read_fit(mainset)
 del y  # No training
 pred_df_rf = rfg_c.rfg_usp_predict(machine, X)
-print"USL: NBC - Predictions".center(45,'_'), "\n", pred_df_rf.head(), "\n"
+print"USL: NBC - Predictions".center(45, '_'), "\n", pred_df_rf.head(), "\n"
 pr = pred_df_rf.iloc[:, -1].value_counts()
 pltr.biplt(gt, pr, "UnSupervised Random Forest Gen.")
 
 # ----------------------------- FUZZY KITCHEN -----------------------------
 import nltk
+
 nltk.download('averaged_perceptron_tagger')
 all_tweets = " "
 tweets = mainset.iloc[0:, 0]
@@ -83,7 +92,7 @@ for i in range(mainset.__len__()):
     tw = mainset.iloc[i, 0]
     if not isinstance(tw, float):
         all_tweets += tw
-    print tw, "\n", type(all_tweets)     # ISSUE #01 RESOLVED
+    print tw, "\n", type(all_tweets)  # ISSUE #01 RESOLVED
 
 # freqD is Frequency of the Words used in Tweets
 freqD = nltk.FreqDist(nltk.word_tokenize(all_tweets))
@@ -94,18 +103,18 @@ freqD = nltk.FreqDist(nltk.word_tokenize(all_tweets))
 
 # D is Synonyms
 D = pd.read_csv('synonyms.csv')
-D = list(D.iloc[0:,0])
+D = list(D.iloc[0:, 0])
 
 # F is Popular tags
 # ser_obj = open('pop_tags', 'r')
 # F = pickle.load(ser_obj)
 F = pd.read_csv('ptag.csv')
-F = list(F.iloc[:,0])
+F = list(F.iloc[:, 0])
 # -------------------------------------------------------- COMMIT STEP 1
 nltk.download('vader_lexicon')
 
 # -------------------------------------------------------- COMMIT STEP 2 (For every word in one tweet)
-fuzzy_df = pd.DataFrame(columns=['Tweets', 'Classified', 'FreqWord'])
+fuzzy_df = pd.DataFrame(columns=['Tweets', 'Classified'])
 
 ######################## TEST CASE 1 #############################
 FW = ''
@@ -114,6 +123,7 @@ for i in range(len(tweets)):
     PoS_TAGS = nltk.pos_tag(sent)
 
     from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
     sia = SentimentIntensityAnalyzer()
 
     one_sentence = tweets.iloc[i]
@@ -150,7 +160,7 @@ for i in range(len(tweets)):
                         if RES is "Positive":
                             RES = "Highly Positive"
                             FW = F[j]
-                            #fuzzy_df['FreqWord'].map(lambda x: next((y for y in x.split() if y in F), 'Not Found'))
+                            # fuzzy_df['FreqWord'].map(lambda x: next((y for y in x.split() if y in F), 'Not Found'))
                         elif RES is "Negative":
                             RES = "Highly Negative"
                             FW = F[j]
@@ -215,23 +225,24 @@ for i in range(len(tweets)):
         else:
             print w, "is not an ADJECTIVE"
 
-
-# -------------------------------------------------------- MAKING ENTRY OF RECORDS OF TWEETS and POLARITY RESULT
-    fuzzy_df = fuzzy_df.append({'Tweets': tweets[i], 'Classified': RES, 'FreqWord': FW}, ignore_index=True)
+    # -------------------------------------------------------- MAKING ENTRY OF RECORDS OF TWEETS and POLARITY RESULT
+    fuzzy_df = fuzzy_df.append({'Tweets': tweets[i], 'Classified': RES}, ignore_index=True)
 # ADDING RECORDS IN DATAFRAME
 fuzzy_df.to_csv("fuzzy.csv", index=False)
 
-import os
-try:
-    os.system("libreoffice --calc fuzzy.csv")
-except:
-    print("This Feature works with Debian Based OS with Libre Office only \n TIP: Use a Spreadsheet software to open"
-          "the CSV file.")
-PS = (fuzzy_df['Classified']=='Positive').sum()
-H_PS = (fuzzy_df['Classified']=='Highly Positive').sum()
-M_PS = (fuzzy_df['Classified']=='Moderately Positive').sum()
-NG = (fuzzy_df['Classified']=='Negative').sum()
-H_NG = (fuzzy_df['Classified']=='Highly Negative').sum()
-M_NG = (fuzzy_df['Classified']=='Moderately Negative').sum()
+import freqWordSelection as fws
+
+fws_df = fws.findFreqWord(fuzzyDF=fuzzy_df)
+sum_df = pd.get_dummies(fws_df[['Classified', 'FreqWord']], columns=['FreqWord']).set_index('Classified').sum(level=0)
+sum_df.columns = sum_df.columns.str.split('_').str[1]
+# sum_df = pd.crosstab(fws_df.Classified, fws_df.FreqWord)
+
+PS = (fuzzy_df['Classified'] == 'Positive').sum()
+H_PS = (fuzzy_df['Classified'] == 'Highly Positive').sum()
+M_PS = (fuzzy_df['Classified'] == 'Moderately Positive').sum()
+NG = (fuzzy_df['Classified'] == 'Negative').sum()
+H_NG = (fuzzy_df['Classified'] == 'Highly Negative').sum()
+M_NG = (fuzzy_df['Classified'] == 'Moderately Negative').sum()
 text = "Fuzzy Logic Stats"
 pltr.stackplotter(H_NG, M_NG, NG, H_PS, M_PS, PS, text)
+pltr.simple_plot(dataframe=sum_df)

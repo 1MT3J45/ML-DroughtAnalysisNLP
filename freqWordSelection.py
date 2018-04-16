@@ -5,63 +5,74 @@ from __future__ import with_statement
 from replacers import *
 import pandas as pd
 import nltk
+import subprocess
 
-# f1 = file('SubmittedCSV/fuzzy.csv', 'r')
-# f2 = file('SubmittedCSV/fuzzyfreq.csv', 'w')
-# f3 = file('SubmittedCSV/fuzzyptag.csv', 'r')
 
-f1 = pd.read_csv("SubmittedCSV/fuzzy.csv")
-f2 = pd.DataFrame(columns=['Tweets', 'Classified', 'FreqWord'])
-# f2 = pd.read_csv("SubmittedCSV/fuzzyfreq.csv")
-f3 = pd.read_csv("SubmittedCSV/fuzzyptag.csv", )
+def findFreqWord(fuzzyDF):
+    f1 = fuzzyDF # pd.read_csv("SubmittedCSV/fuzzy.csv")
+    f2 = pd.DataFrame(columns=['Tweets', 'Classified', 'FreqWord'])
+    f3 = pd.read_csv("SubmittedCSV/fuzzyptag.csv", )
 
-# c1 = csv.reader(f1)
-# c2 = csv.writer(f2)
-# c3 = csv.reader(f3)
+    pop_list = list(f3.iloc[:, 0])
 
-pop_list = list(f3.iloc[:,0])
+    for zero_cl_row in range(f1.__len__()):
+        row = 1
+        found = False
+        splitted_sentence = f1.iloc[zero_cl_row, 0].split()
+        print(splitted_sentence)
+        for tag in pop_list:
+            print("Popular tags:", pop_list)
+            for word in splitted_sentence:
 
-count = 0
+                if word in tag and f1.iloc[zero_cl_row, 1] == "Highly Positive":
+                    f2 = f2.append(
+                        {'Tweets': f1.iloc[zero_cl_row, 0], 'Classified': 'Highly Positive', 'FreqWord': tag},
+                        ignore_index=True)
+                    found = True
+                    row += 1
+                elif word in tag and f1.iloc[zero_cl_row, 1] == "Highly Negative":
+                    f2 = f2.append(
+                        {'Tweets': f1.iloc[zero_cl_row, 0], 'Classified': 'Highly Negative', 'FreqWord': tag},
+                        ignore_index=True)
+                    found = True
+                    row += 1
+                elif word in tag and f1.iloc[zero_cl_row, 1] == "Moderately Positive":
+                    f2 = f2.append(
+                        {'Tweets': f1.iloc[zero_cl_row, 0], 'Classified': 'Moderately Positive', 'FreqWord': tag},
+                        ignore_index=True)
+                    found = True
+                    row += 1
+                elif word in tag and f1.iloc[zero_cl_row, 1] == "Moderately Negative":
+                    f2 = f2.append(
+                        {'Tweets': f1.iloc[zero_cl_row, 0], 'Classified': 'Moderately Negative', 'FreqWord': tag},
+                        ignore_index=True)
+                    found = True
+                    row += 1
+                elif word in tag and f1.iloc[zero_cl_row, 1] == "Positive":
+                    f2 = f2.append({'Tweets': f1.iloc[zero_cl_row, 0], 'Classified': 'Positive', 'FreqWord': tag},
+                                   ignore_index=True)
+                    found = True
+                    row += 1
+                elif word in tag and f1.iloc[zero_cl_row, 1] == "Negative":
+                    f2 = f2.append({'Tweets': f1.iloc[zero_cl_row, 0], 'Classified': 'Negative', 'FreqWord': tag},
+                                   ignore_index=True)
+                    found = True
+                    row += 1
+                else:
+                    print("Unmatched")
+            if not found:
+                print("NO")
+    f2.to_csv("SubmittedCSV/fuzzyfreq.csv", index=False)
+    try:
+        subprocess.call(['libreoffice','--calc','SubmittedCSV/fuzzyfreq.csv'])
+    except OSError:
+        print("Works with DEBIAN OS & LIBREOFFICE 5 only \n Use MS Excel or equivalent Software to open : "
+              "SubmittedCSV/fuzzyfreq.csv")
+    return f2
 
-for zero_cl_row in range(f1.__len__()):
-    row = 1
-    found = False
-    splitted_sentence = f1.iloc[zero_cl_row, 0].split()
-    print(splitted_sentence)
-    for tag in pop_list:
-        print("Popular tags:", pop_list)
-        for word in splitted_sentence:
+def pivotTable():
+    pass
 
-            if word in tag and f1.iloc[zero_cl_row,1] == "Highly Positive":
-                f2 = f2.append({'Tweets': f1.iloc[zero_cl_row,0], 'Classified': 'Highly Positive', 'FreqWord': tag}, ignore_index=True)
-                found = True
-                row +=1
-            elif word in tag and f1.iloc[zero_cl_row,1] == "Highly Negative":
-                f2 = f2.append({'Tweets': f1.iloc[zero_cl_row,0], 'Classified': 'Highly Negative', 'FreqWord': tag}, ignore_index=True)
-                found = True
-                row +=1
-            elif word in tag and f1.iloc[zero_cl_row,1] == "Moderately Positive":
-                f2 = f2.append({'Tweets': f1.iloc[zero_cl_row,0], 'Classified': 'Moderately Positive', 'FreqWord': tag}, ignore_index=True)
-                found = True
-                row +=1
-            elif word in tag and f1.iloc[zero_cl_row,1] == "Moderately Negative":
-                f2 = f2.append({'Tweets': f1.iloc[zero_cl_row,0], 'Classified': 'Moderately Negative', 'FreqWord': tag}, ignore_index=True)
-                found = True
-                row +=1
-            elif word in tag and f1.iloc[zero_cl_row,1] == "Positive":
-                f2 = f2.append({'Tweets': f1.iloc[zero_cl_row,0], 'Classified': 'Positive', 'FreqWord': tag}, ignore_index=True)
-                found = True
-                row +=1
-            elif word in tag and f1.iloc[zero_cl_row,1] == "Negative":
-                f2 = f2.append({'Tweets': f1.iloc[zero_cl_row,0], 'Classified': 'Negative', 'FreqWord': tag}, ignore_index=True)
-                found = True
-                row +=1
-            else:
-                print("Unmatched")
-        if not found:
-            print("NO")
-print(count)
-f2.to_csv("SubmittedCSV/fuzzyfreq.csv")
 
 #       ---------------------------------- SUBMITTED LOGIC - TEST CASE
 #       ---------------------------------- #01 UNIT TESTING FAILED ##10, 11, 27, 30
