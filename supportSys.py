@@ -230,11 +230,10 @@ for i in range(len(tweets)):
 # ADDING RECORDS IN DATAFRAME
 fuzzy_df.to_csv("fuzzy.csv", index=False)
 
-import freqWordSelection as fws
-
 fws_df = fws.findFreqWord(fuzzyDF=fuzzy_df)
 sum_df = pd.get_dummies(fws_df[['Classified', 'FreqWord']], columns=['FreqWord']).set_index('Classified').sum(level=0)
 sum_df.columns = sum_df.columns.str.split('_').str[1]
+sum_df.to_csv('ClassFreq.csv')
 # sum_df = pd.crosstab(fws_df.Classified, fws_df.FreqWord)
 
 PS = (fuzzy_df['Classified'] == 'Positive').sum()

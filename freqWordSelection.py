@@ -9,7 +9,7 @@ import subprocess
 
 
 def findFreqWord(fuzzyDF):
-    f1 = fuzzyDF # pd.read_csv("SubmittedCSV/fuzzy.csv")
+    f1 = fuzzyDF  # pd.read_csv("SubmittedCSV/fuzzy.csv")
     f2 = pd.DataFrame(columns=['Tweets', 'Classified', 'FreqWord'])
     f3 = pd.read_csv("SubmittedCSV/fuzzyptag.csv", )
 

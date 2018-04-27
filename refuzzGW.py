@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import time
+import freqWordSelection as fws
 
 # Importing all Classified Data
 
@@ -121,7 +122,8 @@ try:
     # -------------------------------------------------------- COMMIT STEP 2 (For every word in one tweet)
     fuzzy_df = pd.DataFrame(columns=['tweets', 'classified'])
     for i in range(len(tweets)):
-        sent = nltk.word_tokenize(tweets[i])
+        sent = nltk.word_tokenize(tweets[i].decode('unicode_escape').encode('ascii','ignore'))
+        print(i)
         PoS_TAGS = nltk.pos_tag(sent)
 
         from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -213,15 +215,22 @@ try:
 
     fuzzy_df.to_csv("GlobalWarming/ReFuzzy.csv", index=False, encoding='utf-8-sig')
 
+    fws_df = fws.findFreqWord(fuzzyDF=fuzzy_df)
+    sum_df = pd.get_dummies(fws_df[['Classified', 'FreqWord']], columns=['FreqWord']).set_index('Classified').sum(
+        level=0)
+    sum_df.columns = sum_df.columns.str.split('_').str[1]
+    sum_df.to_csv('GlobalWarming/ClassFreq.csv')
+    # sum_df = pd.crosstab(fws_df.Classified, fws_df.FreqWord)
 
-    PS = (fuzzy_df['classified'] == 'Positive').sum()
-    H_PS = (fuzzy_df['classified'] == 'Highly Positive').sum()
-    M_PS = (fuzzy_df['classified'] == 'Moderately Positive').sum()
-    NG = (fuzzy_df['classified'] == 'Negative').sum()
-    H_NG = (fuzzy_df['classified'] == 'Highly Negative').sum()
-    M_NG = (fuzzy_df['classified'] == 'Moderately Negative').sum()
+    PS = (fuzzy_df['Classified'] == 'Positive').sum()
+    H_PS = (fuzzy_df['Classified'] == 'Highly Positive').sum()
+    M_PS = (fuzzy_df['Classified'] == 'Moderately Positive').sum()
+    NG = (fuzzy_df['Classified'] == 'Negative').sum()
+    H_NG = (fuzzy_df['Classified'] == 'Highly Negative').sum()
+    M_NG = (fuzzy_df['Classified'] == 'Moderately Negative').sum()
     text = "Fuzzy Logic Stats"
     pltr.stackplotter(H_NG, M_NG, NG, H_PS, M_PS, PS, text)
+    pltr.simple_plot(dataframe=sum_df)
 
     import os
 
