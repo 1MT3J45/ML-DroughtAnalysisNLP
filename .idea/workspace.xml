@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ddf865f-b6f2-4ae2-9eba-9ad206e45a63" name="Default" comment="FreqWord Added in Dataset">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9ddf865f-b6f2-4ae2-9eba-9ad206e45a63" name="Default" comment="DS revised">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/17-11-17.py" beforeDir="false" afterPath="$PROJECT_DIR$/17-11-17.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SDT_slang_and_acronym.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SDT_slang_and_acronym.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubmittedCSV/fuzzyfreq.csv" beforeDir="false" afterPath="$PROJECT_DIR$/SubmittedCSV/fuzzyfreq.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_clean.csv" beforeDir="false" afterPath="$PROJECT_DIR$/auto_clean.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_clean_copy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/auto_clean_copy.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auto_clean_final.csv" beforeDir="false" afterPath="$PROJECT_DIR$/auto_clean_final.csv" afterDir="false" />
@@ -17,10 +14,6 @@
       <change beforePath="$PROJECT_DIR$/auto_p3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/auto_p3.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bigram_corpus.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bigram_corpus.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bigramresults.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bigramresults.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/freqWordSelection.py" beforeDir="false" afterPath="$PROJECT_DIR$/freqWordSelection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuzzy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/fuzzy.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supportSys.py" beforeDir="false" afterPath="$PROJECT_DIR$/supportSys.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/synonyms.csv" beforeDir="false" afterPath="$PROJECT_DIR$/synonyms.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tag_tweet.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tag_tweet.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tri_tweet.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tri_tweet.csv" afterDir="false" />
@@ -37,56 +30,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="supportSys.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/supportSys.py">
+      <file leaf-file-name="refuzzGW.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/refuzzGW.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="84">
+              <caret line="112" column="34" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="34" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Submitted.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Submitted.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="48" column="70" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unitTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/unitTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="247" selection-end-line="247" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="freqWordSelection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/freqWordSelection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plotter.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plotter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -118,6 +69,9 @@
       <find>for</find>
       <find>pop</find>
       <find>libre</find>
+      <find>map</find>
+      <find>neutra</find>
+      <find>vader</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -147,12 +101,15 @@
         <option value="$PROJECT_DIR$/SubmittedCSV/fuzzyptag.csv" />
         <option value="$PROJECT_DIR$/Submitted.py" />
         <option value="$PROJECT_DIR$/gram_fetch.py" />
-        <option value="$PROJECT_DIR$/refuzzGW.py" />
         <option value="$PROJECT_DIR$/ptag.csv" />
-        <option value="$PROJECT_DIR$/freqWordSelection.py" />
+        <option value="$PROJECT_DIR$/../../MIT Alandi - Cold Storage using ML/Main.py" />
         <option value="$PROJECT_DIR$/plotter.py" />
         <option value="$PROJECT_DIR$/unitTest.py" />
+        <option value="$USER_HOME$/auto_cold_Storage_system.py" />
+        <option value="$USER_HOME$/result_graph.py" />
+        <option value="$PROJECT_DIR$/freqWordSelection.py" />
         <option value="$PROJECT_DIR$/supportSys.py" />
+        <option value="$PROJECT_DIR$/refuzzGW.py" />
       </list>
     </option>
   </component>
@@ -165,12 +122,30 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ML-DroughtAnalysisNLP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ML-DroughtAnalysisNLP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ML-DroughtAnalysisNLP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ML-DroughtAnalysisNLP" type="462c0819:PsiDirectoryNode" />
+              <item name="GlobalWarming" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ML-RestaurantReviewAnalysis-NLP" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -189,7 +164,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.supportSys">
+  <component name="RunManager" selected="Python.refuzzGW">
     <configuration name="freqWordSelection" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ML-DroughtAnalysisNLP" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -226,7 +201,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="refuzz" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="refuzzGW" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ML-DroughtAnalysisNLP" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -238,7 +213,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/refuzz.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/refuzzGW.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -282,18 +257,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.supportSys" />
-      <item itemvalue="Python.refuzz" />
       <item itemvalue="Python.unitTest" />
       <item itemvalue="Python.freqWordSelection" />
       <item itemvalue="Python.plotter" />
+      <item itemvalue="Python.refuzzGW" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.refuzzGW" />
         <item itemvalue="Python.supportSys" />
         <item itemvalue="Python.unitTest" />
         <item itemvalue="Python.plotter" />
         <item itemvalue="Python.freqWordSelection" />
-        <item itemvalue="Python.refuzz" />
       </list>
     </recent_temporary>
   </component>
@@ -424,21 +399,41 @@
       <option name="project" value="LOCAL" />
       <updated>1522607577483</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Stacked Graph">
+      <created>1523891470812</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1523891470812</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Stacked Graph, Dir">
+      <created>1523892158089</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1523892158089</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ASCII decoding bug fix">
+      <created>1524818081267</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1524818081267</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.23409091" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23976173" />
       <window_info anchor="bottom" id="TODO" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50454545" side_tool="true" weight="0.32970452" />
-      <window_info active="true" anchor="right" id="Run" order="3" visible="true" weight="0.55454546" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49545455" weight="0.32970452" />
-      <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4969697" visible="true" weight="0.4071763" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5003723" side_tool="true" visible="true" weight="0.32917318" />
+      <window_info anchor="right" id="Run" order="3" weight="0.55454546" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49545455" weight="0.3281493" />
+      <window_info anchor="bottom" id="Python Console" order="7" sideWeight="0.4944155" weight="0.40405616" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24924242" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32970452" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4996277" visible="true" weight="0.32917318" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39968896" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -453,22 +448,22 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21593447" />
-      <window_info id="Structure" order="1" weight="0.24924242" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23352855" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24924242" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="5" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49545455" weight="0.32970452" />
-      <window_info anchor="right" id="Run" order="3" weight="0.40757576" />
+      <window_info anchor="right" id="Run" order="3" weight="0.55454546" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32970452" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="7" sideWeight="0.4969697" visible="true" weight="0.3971354" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39968896" />
       <window_info anchor="right" x="0" y="0" width="291" height="572" id="Documentation" order="4" weight="0.3098485" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32970452" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50454545" side_tool="true" weight="0.32970452" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49545455" weight="0.3281493" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="7" sideWeight="0.4969697" visible="true" weight="0.32659408" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -523,7 +518,13 @@
     <MESSAGE value="Bug Fixes and Performance imp" />
     <MESSAGE value="Comparative Graph Generation" />
     <MESSAGE value="FreqWord Added in Dataset" />
-    <option name="LAST_COMMIT_MESSAGE" value="FreqWord Added in Dataset" />
+    <MESSAGE value="Stacked Graph" />
+    <MESSAGE value="Stacked Graph, Dir" />
+    <MESSAGE value="ASCII decoding bug fix" />
+    <MESSAGE value="Global Warming DS revised" />
+    <MESSAGE value="GW DS Revised" />
+    <MESSAGE value="DS revised" />
+    <option name="LAST_COMMIT_MESSAGE" value="DS revised" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -531,47 +532,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/unitTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4194">
-          <caret line="237" selection-start-line="232" selection-end-line="237" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/supportSys.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="29" column="93" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Submitted.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" column="70" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unitTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2124">
-          <caret line="120" column="31" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/freqWordSelection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plotter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2610">
@@ -604,9 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -824,13 +781,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/refuzzGW.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/refuzz.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-22">
@@ -843,13 +793,6 @@
         <state relative-caret-position="-1404" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Submitted.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="48" column="70" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ptag.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -857,37 +800,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/freqWordSelection.py">
+    <entry file="file://$PROJECT_DIR$/../../MIT Alandi - Cold Storage using ML/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plotter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+        <state relative-caret-position="271">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/unitTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="247" selection-end-line="247" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="4464">
+          <caret line="248" selection-start-line="248" selection-end-line="248" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Submitted.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="48" column="70" selection-start-line="48" selection-start-column="70" selection-end-line="48" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/result_graph.py" />
+    <entry file="file://$USER_HOME$/auto_cold_Storage_system.py" />
+    <entry file="file://$PROJECT_DIR$/plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="110" column="4" selection-start-line="110" selection-start-column="4" selection-end-line="110" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freqWordSelection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/supportSys.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="48">
+          <caret line="232" column="24" selection-start-line="232" selection-start-column="24" selection-end-line="232" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GlobalWarming/tweet_global_warming.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/refuzzGW.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="112" column="34" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="34" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
