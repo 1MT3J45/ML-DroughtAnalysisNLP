@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import time
+import freqWordSelection as fws
 
 # Importing all Classified Data
 
@@ -36,11 +37,11 @@ def tweetPolarity():
     tweets = open("TestOnly/auto_domain_tweets.csv").read()
     tweets_list = tweets.split('\n')
 
-    pos_sent = open("positive.txt").read()
+    pos_sent = open("TestOnly/positive.txt").read()
     positive_words = pos_sent.split('\n')
     positive_counts = []
 
-    neg_sent = open('negative.txt').read()
+    neg_sent = open('TestOnly/negative.txt').read()
     negative_words = neg_sent.split('\n')
     negative_counts = []
 
@@ -117,18 +118,15 @@ def tweetPolarity():
         ##
         ##            label(window, text="Neutral Tweets").grid(row=3)
         ##            label(window, text=nucount).grid(row=3,column=1)
-    for i in range(5):
-        print "*"*i*(i*2)
-        time.sleep(1)
 
     tweets = open("TestOnly/auto_domain_tweets.csv").read()
     tweets_list = tweets.split('\n')
 
-    pos_sent = open("positive.txt").read()
+    pos_sent = open("TestOnly/positive.txt").read()
     positive_words = pos_sent.split('\n')
     positive_counts = []
 
-    neg_sent = open('negative.txt').read()
+    neg_sent = open('TestOnly/negative.txt').read()
     negative_words = neg_sent.split('\n')
     negative_counts = []
 
@@ -335,7 +333,8 @@ try:
                 else:
                     print"[False]: Tri Pairs Matched Nowhere in D\n"
             else:
-                print "[TriPair(F)]: Pattern for Adverb, Adverb, Adjective did not match.\n Looking for Bi-Pair Patterns\n"
+                print "[TriPair(F)]: Pattern for Adverb, Adverb, Adjective did not match.\n " \
+                      "Looking for Bi-Pair Patterns\n"
         print(tri_pairs)
 
         # -------------------------------------------------------- PATTERN ADVERB, ADJECTIVE (Down)
@@ -381,7 +380,12 @@ try:
         # -------------------------------------------------------- MAKING ENTRY OF RECORDS OF TWEETS and POLARITY RESULT
         fuzzy_df = fuzzy_df.append({'tweets': tweets[i], 'classified': RES}, ignore_index=True)       # ADDING RECORDS IN DATAFRAME
 
-    fuzzy_df.to_csv("ReFuzzy.csv", index=False)
+    fuzzy_df.to_csv("TestOnly/ReFuzzy.csv", index=False)
+    fws_df = fws.findFreqWord(fuzzyDF=fuzzy_df)
+    sum_df = pd.get_dummies(fws_df[['Classified', 'FreqWord']], columns=['FreqWord']).set_index('Classified').sum(
+        level=0)
+    sum_df.columns = sum_df.columns.str.split('_').str[1]
+    sum_df.to_csv('TestOnly/ClassFreq.csv')
 
     PS = (fuzzy_df['classified'] == 'Positive').sum()
     H_PS = (fuzzy_df['classified'] == 'Highly Positive').sum()
@@ -391,14 +395,7 @@ try:
     M_NG = (fuzzy_df['classified'] == 'Moderately Negative').sum()
     text = "Fuzzy Logic Stats"
     pltr.stackplotter(H_NG, M_NG, NG, H_PS, M_PS, PS, text)
-
-    import os
-
-    try:
-        os.system("libreoffice --calc ReFuzzy.csv")
-    except:
-        print("This Feature works with Debian Based OS with Libre Office only \n TIP: Use a Spreadsheet software to open"
-              "the CSV file.")
+    pltr.simple_plot(dataframe=sum_df)
 
 except Exception as e:
     print "[Refuzz]:", e
